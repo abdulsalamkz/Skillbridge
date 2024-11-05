@@ -48,23 +48,6 @@
             }
         }
     </script>
-    <!-- <style>
-        .menu-item-2761 {
-            background-color: #FF9500;
-            padding: 14px 34px;
-            border-radius: 8px;
-            color: white;
-        }
-
-        nav .current-menu-item {
-            background-color: #F1F1F3;
-            border-radius: 8px;
-        }
-
-        nav li {
-            padding: 7px 10px;
-        }
-    </style> -->
 </head>
 
 <body class="bg-white-97">
@@ -89,37 +72,33 @@
                 </label>
             </div>
             <nav class="hidden flex-col md:flex md:flex-row md:space-x-8 mr-auto ml-12">
-                <?php
-                // wp_nav_menu(array(
-                //     'theme_location' => 'Primary-menu',
-                //     'menu_class' => 'nav items-center flex',
-
-                // ));
-    
-                 $menu_items =wp_get_nav_menu_items("main-menu");
-                 echo '<ul class="flex">';
-                 foreach ($menu_items as $menu_item) {
-                  echo '<li class="py-3 px-3 rounded-md"><a href="'.$menu_item ->url.'">'.$menu_item->title .'</a></li>';
-                 }
-                 echo '</ul>';
-                ?>
+                <ul class="flex">
+                    <?php
+                    $menu_items = wp_get_nav_menu_items("main-menu");
+                    foreach ($menu_items as $menu_item) { ?>
+                        <li class="py-3 px-3 rounded-md">
+                            <a href="<?php echo  $menu_item->url ?>"><?php echo $menu_item->title ?></a>
+                        </li>
+                    <?php
+                    }
+                    ?>
+                </ul>
             </nav>
             <div class="hidden lg:flex md:block items-center">
-                <?php
-                 // wp_nav_menu(array(
-                 //     'theme_location' => 'Side-menu',
-                 //     'menu_class'=>'flex items-center p-5 gap-4'
-                 // ));
-                 $menu_items =wp_get_nav_menu_items("Form-menu");
-                 // var_dump($menu_items[0]->title);
- 
-                 echo '<ul class="flex">';
-                 foreach ($menu_items as $menu_item) {
-                  echo '<li class="py-3 px-6"><a href="'.$menu_item ->url.'">'.$menu_item->title .'</a></li>';
-                 }
-                 echo '</ul>';
+                <ul class="flex">
+                    <?php
+                    $menu_items = wp_get_nav_menu_items("Form-menu");
 
-                ?>
+                    foreach ($menu_items as $menu_item) {
+                    ?>
+                        <li class="py-3 px-6">
+                            <a href="<?php echo $menu_item->url ?>"><?php echo $menu_item->title ?></a>
+                        </li>
+                    <?php
+                    }
+
+                    ?>
+                </ul>
             </div>
         </div>
 
