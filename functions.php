@@ -22,3 +22,29 @@ add_theme_support(
         'width'  => 54,
     )
 );
+// register_post_type(
+//     'benefit', 
+//     array(
+//         'labels'      => array(
+//             'name'          => __('Benefits', 'skillbridge'),
+//             'singular_name' => __('Benefit', 'skillbridge'),
+
+//         ),
+
+//         'public'      => true,
+//         'has_archive' => true,
+//     )
+// );
+
+register_post_type(
+    'course',
+    array(
+        'labels'      => array(
+            'name'          => __('Courses', 'skillbridge'),
+            'singular_name' => __('Course', 'skillbridge'),
+        ),
+        'public'      => true,
+        'has_archive' => true,
+        'supports'     => array('title', 'editor', 'author', 'thumbnail','excerpt'),
+    )
+);
