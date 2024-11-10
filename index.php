@@ -54,7 +54,7 @@
     <div class="container px-4 mt-20 mx-auto">
         <div class="md:flex block justify-between">
             <span class="w-3/4">
-                <h2 class="font-semibold text-4xl">Benefits</h2>
+                <h2 class="font-semibold text-4xl mb-2">Benefits</h2>
                 <p class="text-base">Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
             </span>
             <span class="flex items-end">
@@ -107,7 +107,7 @@
     <div class="container px-4 my-20 mx-auto">
         <div class="md:flex block justify-between">
             <span class="w-3/4">
-                <h2 class="font-semibold text-4xl">Our Courses</h2>
+                <h2 class="font-semibold text-4xl mb-2">Our Courses</h2>
                 <p class="text-base">Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
             </span>
             <span class="flex items-end">
@@ -117,8 +117,7 @@
             </span>
         </div>
     </div>
-    <div class="mt-4 mb-24 container mx-auto px-4 grid grid-cols-1 gap-5 md:grid-cols-2">
-    <div class="flex flex-col justify-between items-start flex-1 rounded-lg border-grey-70 bg-white-99 p-10">
+    <!-- <div class="flex flex-col justify-between items-start flex-1 rounded-lg border-grey-70 bg-white-99 p-10">
         <img src="<?php echo get_template_directory_uri() ?> ./img/fundamentals.png" class="w-full rounded-t-lg" alt="webdevImage">
         <div class="p-0">
             <div class="flex flex-col md:flex-row justify-between my-4">
@@ -152,7 +151,7 @@
             <h5 class="text-xl font-semibold text-grey-10">UI/UX Design</h5>
             <p class="text-base font-normal text-grey-30 mt-2.5">Master the art of creating intuitive user interfaces (UI) and enhancing user experiences (UX). Learn design principles, wireframing, prototyping, and usability testing techniques.</p>
             <div class="mt-4">
-            <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
+                <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
             </div>
         </div>
     </div>
@@ -171,7 +170,7 @@
             <h5 class="text-xl font-semibold text-grey-10">Mobile App Development</h5>
             <p class="text-base font-normal text-grey-30 mt-2.5">Dive into the world of mobile app development. Learn to build native iOS and Android applications using industry-leading frameworks like Swift and Kotlin.</p>
             <div class="mt-4">
-            <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
+                <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
             </div>
         </div>
     </div>
@@ -190,7 +189,7 @@
             <h5 class="text-xl font-semibold text-grey-10">Graphic Design for Beginners</h5>
             <p class="text-base font-normal text-grey-30 mt-2.5">Discover the fundamentals of graphic design, including typography, color theory, layout design, and image manipulation techniques. Create visually stunning designs for print and digital media.</p>
             <div class="mt-4">
-            <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
+                <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
             </div>
         </div>
     </div>
@@ -209,7 +208,7 @@
             <h5 class="text-xl font-semibold text-grey-10">Front-End Web Development</h5>
             <p class="text-base font-normal text-grey-30 mt-2.5">Become proficient in front-end web development. Learn HTML, CSS, JavaScript, and popular frameworks like Bootstrap and React. Build interactive and responsive websites.</p>
             <div class="mt-4">
-            <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
+                <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
             </div>
         </div>
     </div>
@@ -228,20 +227,41 @@
             <h5 class="text-xl font-semibold text-grey-10">Advanced JavaScript</h5>
             <p class="text-base font-normal text-grey-30 mt-2.5">Take your JavaScript skills to the next level. Explore advanced concepts like closures, prototypes, asynchronous programming, and ES6 features. Build complex applications with confidence.</p>
             <div class="mt-4">
-            <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
+                <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
             </div>
         </div>
+    </div> -->
+    <div class="mt-4 mb-24 container mx-auto px-4 grid grid-cols-1 gap-5 lg:grid-cols-2">
+        <?php
+
+        $courses = get_posts( array(
+            'numberposts' => 10,
+            'post_type'   => 'course'
+        ));
+
+        foreach ($courses as $course) { ?>
+            <div class="p-6 bg-absolute-white rounded-lg">
+                <div class="mb-4">
+                    <div class="w-full h-auto bg-gray-200 rounded-md overflow-hidden mb-4">
+                        <?php echo get_the_post_thumbnail($course); ?>
+                    </div>
+                </div>
+                <h2 class="text-xl font-semibold text-gray-800 mb-2"><?php echo get_the_title($course); ?></h2>
+                <p class="text-gray-600 mb-4"><?php echo get_the_excerpt($course); ?></p>
+            </div>
+        <?php } ?>
+
     </div>
-    
-</div>
+
+
 
 
 </section>
 <section>
-<div class="container px-4 mt-20 mx-auto mb-20">
+    <div class="container px-4 mt-20 mx-auto mb-20">
         <div class="md:flex block justify-between">
             <span class="w-3/4">
-                <h2 class="font-semibold text-4xl">Benefits</h2>
+                <h2 class="font-semibold text-4xl mb-2">Our Testimonials</h2>
                 <p class="text-base">Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
             </span>
             <span class="flex items-end">
@@ -252,7 +272,7 @@
         </div>
     </div>
     <div class="mt-4 mb-24 container mx-auto px-4 grid grid-cols-1 gap-5 md:grid-cols-2">
-    <div>
+        <div>
             <div class="bg-white-99 border-0 rounded-b-none p-10 items-start gap-2 self-stretch ">
                 <p class="text-grey-30  text-base normal-case font-normal leading-6">
                     The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend it!
@@ -260,7 +280,7 @@
             </div>
             <div class="flex justify-between items-center p-3 bg-white-95 rounded-b-lg">
                 <div class="flex items-center">
-                    <img src="<?php echo get_template_directory_uri() ?> ./img/sarah.png" class="w-10 h-10 rounded-lg">
+                    <img src="<?php echo get_template_directory_uri() ?> ./img/sarah-l.png" class="w-10 h-10 rounded-lg">
                     <span class="text-base font-semibold px-2 leading-6">Sarah L</span>
                 </div>
                 <div>
@@ -276,8 +296,8 @@
             </div>
             <div class="flex justify-between items-center p-3 bg-white-95 rounded-b-lg">
                 <div class="flex items-center">
-                    <img src="<?php echo get_template_directory_uri() ?> ./img/sarah.png" class="w-10 h-10 rounded-lg">
-                    <span class="text-base font-semibold px-2 leading-6">Sarah L</span>
+                    <img src="<?php echo get_template_directory_uri() ?> ./img/jason.png" class="w-10 h-10 rounded-lg">
+                    <span class="text-base font-semibold px-2 leading-6">Jason M</span>
                 </div>
                 <div>
                     <button class="flex p-4 px-4 justify-center items-center gap-2 rounded-md border border-white-95 bg-white-97" type="button">Read Full Story</button>
@@ -292,8 +312,8 @@
             </div>
             <div class="flex justify-between items-center p-3 bg-white-95 rounded-b-lg">
                 <div class="flex items-center">
-                    <img src="<?php echo get_template_directory_uri() ?> ./img/sarah.png" class="w-10 h-10 rounded-lg">
-                    <span class="text-base font-semibold px-2 leading-6">Sarah L</span>
+                    <img src="<?php echo get_template_directory_uri() ?> ./img/emily.png" class="w-10 h-10 rounded-lg">
+                    <span class="text-base font-semibold px-2 leading-6">Emily R</span>
                 </div>
                 <div>
                     <button class="flex p-4 px-4 justify-center items-center gap-2 rounded-md border border-white-95 bg-white-97" type="button">Read Full Story</button>
@@ -308,8 +328,8 @@
             </div>
             <div class="flex justify-between items-center p-3 bg-white-95 rounded-b-lg">
                 <div class="flex items-center">
-                    <img src="<?php echo get_template_directory_uri() ?> ./img/sarah.png" class="w-10 h-10 rounded-lg">
-                    <span class="text-base font-semibold px-2 leading-6">Sarah L</span>
+                    <img src="<?php echo get_template_directory_uri() ?> ./img/michael.png" class="w-10 h-10 rounded-lg">
+                    <span class="text-base font-semibold px-2 leading-6">Michael K</span>
                 </div>
                 <div>
                     <button class="flex p-4 px-4 justify-center items-center gap-2 rounded-md border border-white-95 bg-white-97" type="button">Read Full Story</button>
@@ -317,9 +337,27 @@
             </div>
         </div>
     </div>
-    
-</section>
 
+</section>
+<section>
+    <div class="container px-4 mt-20 mx-auto mb-20">
+        <div class="md:flex block justify-between">
+            <span class="w-3/4">
+                <h2 class="font-semibold text-4xl mb-2">Our Pricing</h2>
+                <p class="text-base">Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
+            </span>
+            <span class="flex items-center bg-absolute-white p-3 rounded-lg">
+                <button class="py-3 text-absolute-white bg-orange-50 px-5 rounded-lg">
+                    Monthly
+                </button>
+                <button class="py-3 px-5 text-gray-30">
+                    Yearly
+                </button>
+            </span>
+        </div>
+    </div>
+
+</section>
 <?php
 get_footer()
 ?>
