@@ -202,54 +202,6 @@
             </div>
             </div>
         <?php } ?>
-        <!-- <div>
-            <div class="bg-white-99 border-0 rounded-b-none p-10 items-start gap-2 self-stretch ">
-                <p class="text-grey-30  text-base normal-case font-normal leading-6">
-                <?php echo get_the_excerpt($course); ?>
-                </p>
-            </div>
-            <div class="flex justify-between items-center p-3 bg-white-95 rounded-b-lg">
-                <div class="flex items-center">
-                    <span class="w-10 h-10 rounded-lg"><?php echo get_the_post_thumbnail($testimonial); ?></span>
-                    <span class="text-base font-semibold px-2 leading-6"><?php echo get_the_title($testimonial); ?></span>
-                </div>
-                <div>
-                    <button class="flex p-4 px-4 justify-center items-center gap-2 rounded-md border border-white-95 bg-white-97" type="button">Read Full Story</button>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="bg-white-99 border-0 rounded-b-none p-10 items-start gap-2 self-stretch ">
-                <p class="text-grey-30  text-base normal-case font-normal leading-6">
-                    The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend it!
-                </p>
-            </div>
-            <div class="flex justify-between items-center p-3 bg-white-95 rounded-b-lg">
-                <div class="flex items-center">
-                    <img src="<?php echo get_template_directory_uri() ?> ./img/emily.png" class="w-10 h-10 rounded-lg">
-                    <span class="text-base font-semibold px-2 leading-6">Emily R</span>
-                </div>
-                <div>
-                    <button class="flex p-4 px-4 justify-center items-center gap-2 rounded-md border border-white-95 bg-white-97" type="button">Read Full Story</button>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class="bg-white-99 border-0 rounded-b-none p-10 items-start gap-2 self-stretch ">
-                <p class="text-grey-30  text-base normal-case font-normal leading-6">
-                    The web design course provided a solid foundation for me. The instructors were knowledgeable and supportive, and the interactive learning environment was engaging. I highly recommend it!
-                </p>
-            </div>
-            <div class="flex justify-between items-center p-3 bg-white-95 rounded-b-lg">
-                <div class="flex items-center">
-                    <img src="<?php echo get_template_directory_uri() ?> ./img/michael.png" class="w-10 h-10 rounded-lg">
-                    <span class="text-base font-semibold px-2 leading-6">Michael K</span>
-                </div>
-                <div>
-                    <button class="flex p-4 px-4 justify-center items-center gap-2 rounded-md border border-white-95 bg-white-97" type="button">Read Full Story</button>
-                </div>
-            </div>
-        </div> -->
     </div>
 
 </section>
