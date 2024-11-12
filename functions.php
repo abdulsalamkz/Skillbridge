@@ -23,7 +23,7 @@ add_theme_support(
     )
 );
 register_post_type(
-    'benefit', 
+    'benefit',
     array(
         'labels'      => array(
             'name'          => __('Benefits', 'skillbridge'),
@@ -33,7 +33,7 @@ register_post_type(
 
         'public'      => true,
         'has_archive' => true,
-        'supports'     => array('title', 'editor', 'author','excerpt'),
+        'supports'     => array('title', 'editor', 'excerpt'),
     )
 );
 
@@ -46,18 +46,19 @@ register_post_type(
         ),
         'public'      => true,
         'has_archive' => true,
-        'supports'     => array('title', 'editor', 'author', 'thumbnail','excerpt'),
-    )
+        'supports'     => array('title', 'editor', 'thumbnail', 'excerpt'),
+    ) 
 );
+add_theme_support( 'post-thumbnails' );
 register_post_type(
     'testimonial',
     array(
         'labels'      => array(
-            'name'          => __('Testimonial', 'skillbridge'),
+            'name'          => __('Testimonials', 'skillbridge'),
             'singular_name' => __('Testimonial', 'skillbridge'),
         ),
         'public'      => true,
         'has_archive' => true,
-        'supports'     => array('title', 'editor', 'author', 'thumbnail','excerpt'),
+        'supports'     => array('title', 'editor', 'thumbnail', 'excerpt'),
     )
 );
