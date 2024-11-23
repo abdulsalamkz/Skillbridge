@@ -47,9 +47,10 @@ register_post_type(
         'public'      => true,
         'has_archive' => true,
         'supports'     => array('title', 'editor', 'thumbnail', 'excerpt'),
-    ) 
+    )
 );
-add_theme_support( 'post-thumbnails' );
+
+add_theme_support('post-thumbnails');
 register_post_type(
     'testimonial',
     array(
@@ -62,3 +63,43 @@ register_post_type(
         'supports'     => array('title', 'editor', 'thumbnail', 'excerpt'),
     )
 );
+function create_course_taxonomy()
+{
+    $labels = array(
+        'name'          => 'Courses',
+        'singular_name' => 'Course',
+        'menu_name'     => 'Course Category',
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'rewrite'           => array('slug' => 'course'),
+    );
+
+    register_taxonomy('course', array('course'), $args);
+}
+
+add_action('init', 'create_course_taxonomy');
+
+function create_course_tags()
+{
+    $labels = array(
+        'name'          => 'Course Tags',
+        'singular_name' => 'Course Tag',
+        'menu_name'     => 'Course Tags',
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'rewrite'           => array('slug' => 'course-tag'),
+    );
+
+    register_taxonomy('course_tag', array('course'), $args);
+}
+
+add_action('init', 'create_course_tags');

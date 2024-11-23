@@ -144,9 +144,20 @@
                     <div class="w-full h-auto bg-gray-200 rounded-md overflow-hidden mb-4">
                         <?php echo get_the_post_thumbnail($course); ?>
                     </div>
-                    <div class="mb-4">
-                        <span class="rounded-md border border-white-95 bg-white-99 p-2 gap-2.5">4 Weeks</span>
-                        <span class="rounded-md border border-white-95 bg-white-99 p-2 gap-2.5">Beginner</span>
+                    <div class="flex justify-between">
+                        <div class="mb-4">
+                            <?php
+                            $tags = get_the_terms($course, 'course_tag');
+                            foreach ($tags as $tag) {
+                            ?>
+                                <span class="rounded-md border border-white-95 bg-white-99 p-2 me-1"><?php echo $tag->name ?></span>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <div>
+                            <h4>By John Smith</h4>
+                        </div>
                     </div>
                 </div>
                 <h2 class="text-xl font-semibold text-gray-800 mb-2"><?php echo get_the_title($course); ?></h2>
@@ -186,27 +197,27 @@
 
         foreach ($testimonials as $testimonial) { ?>
             <div>
-            <div class="bg-white-99 border-0 rounded-t-lg p-10 items-start gap-2 self-stretch ">
-                <p class="text-grey-30  text-base normal-case font-normal leading-6">
-                <?php echo get_the_excerpt($course); ?>
-                </p>
-            </div>
-            <div class="flex justify-between items-center p-3 bg-white-95 rounded-b-lg">
-                <div class="flex items-center">
-                    <span class="w-10 h-10 rounded-lg"><?php echo get_the_post_thumbnail($testimonial); ?></span>
-                    <span class="text-base font-semibold px-2 leading-6"><?php echo get_the_title($testimonial); ?></span>
+                <div class="bg-white-99 border-0 rounded-t-lg p-10 items-start gap-2 self-stretch ">
+                    <p class="text-grey-30  text-base normal-case font-normal leading-6">
+                        <?php echo get_the_excerpt($testimonial); ?>
+                    </p>
                 </div>
-                <div>
-                    <button class="flex p-4 px-4 justify-center items-center gap-2 rounded-md border border-white-95 bg-white-97" type="button">Read Full Story</button>
+                <div class="flex justify-between items-center p-3 bg-white-95 rounded-b-lg">
+                    <div class="flex items-center">
+                        <span class="w-10 h-10 rounded-lg"><?php echo get_the_post_thumbnail($testimonial); ?></span>
+                        <span class="text-base font-semibold px-2 leading-6"><?php echo get_the_title($testimonial); ?></span>
+                    </div>
+                    <div>
+                        <button class="flex p-4 px-4 justify-center items-center gap-2 rounded-md border border-white-95 bg-white-97" type="button">Read Full Story</button>
+                    </div>
                 </div>
-            </div>
             </div>
         <?php } ?>
     </div>
 
 </section>
 <section>
-    <div class="container px-4 mt-20 mx-auto mb-20">
+    <!-- <div class="container px-4 mt-20 mx-auto mb-20">
         <div class="md:flex block justify-between">
             <span class="w-3/4">
                 <h2 class="font-semibold text-4xl mb-2">Our Pricing</h2>
@@ -222,7 +233,62 @@
             </span>
         </div>
     </div>
-
+     -->
+    <div class="container mx-auto my-10 p-8 lg:p-10 rounded-xl flex flex-col lg:flex-row w-full max-w-[1279px] bg-absolute-white shadow-md">
+        <div class="flex flex-col w-full lg:w-5/12 lg:pr-10">
+            <div>
+                <h3 class="text-gray-15 text-4xl font-semibold leading-[1.3] mb-4">
+                    Frequently<br>Asked Questions
+                </h3>
+                <p class="text-absolute-black text-base leading-6">
+                    Still have any questions? Contact our team via support@skillbridge.com
+                </p>
+            </div>
+            <div class="mt-6">
+                <button type="button"
+                    class="flex p-4 justify-center items-center gap-2 rounded-md border border-white-95 bg-white text-absolute-black hover:bg-white-97 shadow-sm text-sm font-medium">
+                    See All FAQ’s
+                </button>
+            </div>
+        </div>
+        <div class="flex flex-col w-full lg:w-7/12 mt-10 lg:mt-0">
+            <div class="rounded-lg bg-white shadow p-6">
+                <ul class="list-none">
+                    <li class="flex justify-between items-center pb-5 border-b border-white-90 text-gray-15 text-lg font-medium">
+                        Can I enroll in multiple courses at once?
+                        <a href="#"><i class="fas fa-times-circle text-gray-60"></i></a>
+                    </li>
+                    <li class="mt-5 mb-6 text-gray-30 text-base leading-6">
+                        Absolutely! You can enroll in multiple courses simultaneously and access them at your convenience.
+                    </li>
+                    <li class="flex justify-between items-center p-4 rounded-md border border-white-95 bg-white-95 hover:bg-white-97 cursor-pointer">
+                        Enrollment Process for Different Courses
+                        <a href="#"><i class="fas fa-arrow-right text-gray-40"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-6">
+                <ul class="p-0 m-0 list-none space-y-4">
+                    <li class="flex items-center justify-between p-5 rounded-lg border border-white-95 bg-white-99 hover:bg-white-97 cursor-pointer">
+                        <span class="text-gray-20">What kind of support can I expect from instructors?</span>
+                        <a href="#"><i class="fas fa-plus-circle text-gray-40"></i></a>
+                    </li>
+                    <li class="flex items-center justify-between p-5 rounded-lg border border-white-95 bg-white-99 hover:bg-white-97 cursor-pointer">
+                        <span class="text-gray-20">Are the courses self-paced or do they have specific start and end dates?</span>
+                        <a href="#"><i class="fas fa-plus-circle text-gray-40"></i></a>
+                    </li>
+                    <li class="flex items-center justify-between p-5 rounded-lg border border-white-95 bg-white-99 hover:bg-white-97 cursor-pointer">
+                        <span class="text-gray-20">Are there any prerequisites for the courses?</span>
+                        <a href="#"><i class="fas fa-plus-circle text-gray-40"></i></a>
+                    </li>
+                    <li class="flex items-center justify-between p-5 rounded-lg border border-white-95 bg-white-99 hover:bg-white-97 cursor-pointer">
+                        <span class="text-gray-20">Can I download the course materials for offline access?</span>
+                        <a href="#"><i class="fas fa-plus-circle text-gray-40"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 <?php
 get_footer()
