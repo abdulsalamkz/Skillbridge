@@ -163,13 +163,13 @@
                 <h2 class="text-xl font-semibold text-gray-800 mb-2"><?php echo get_the_title($course); ?></h2>
                 <p class="text-gray-600 mb-4"><?php echo get_the_excerpt($course); ?></p>
                 <div class="mt-4">
-                    <button class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button">Get it Now</button>
+                    <a href="<?php echo get_permalink($course)?>" class="flex p-3.5 justify-center items-center gap-2 w-full text-lg text-gray-15 rounded-md bg-white-97 border border-white-95" type="button" >Get it Now</a>
                 </div>
             </div>
         <?php } ?>
 
     </div>
-
+ 
 
 
 
