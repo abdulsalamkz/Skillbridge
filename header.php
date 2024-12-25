@@ -56,7 +56,7 @@
         <div class="text-center py-2.5 mt-5 bg-orange-50 text-absolute-white lg:mx-7 md:mx-5 mx-4 rounded-md text-sm">
             Free Courses 🌟 Sale Ends Soon, Get It Now<i class="fa-solid ms-3 text-absolute-white fa-right-long"></i>
         </div>
-        <div class="lg:px-32 px-10 my-5 flex lg:justify-normal justify-between items-center">
+        <div class="px-10 my-5 flex lg:justify-normal justify-between items-center">
             <div class="flex items-center space-x-2">
                 <?php
                 if (function_exists('the_custom_logo')) {
