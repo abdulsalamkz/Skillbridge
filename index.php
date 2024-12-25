@@ -65,53 +65,17 @@
         </div>
     </div>
     <div class="container mx-auto px-4 grid gap-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-16 mb-10">
-        <!-- <div class="bg-absolute-white p-10">
-            <h1 class="font-bold text-6xl text-end mb-10">01</h1>
-            <h3 class="text-xl mb-5 font-semibold">Flexible Learning Schedule</h3>
-            <p class="mb-10">Fit your coursework around your existing commitments and obligations.</p>
-            <div class="flex justify-end"><img src="<?php echo get_template_directory_uri(); ?> ./img/button.png" alt=""></div>
-        </div>
-        <div class="bg-absolute-white p-10">
-            <h1 class="font-bold text-6xl text-end mb-10">02</h1>
-            <h3 class="text-xl mb-5 font-semibold">Expert Instruction</h3>
-            <p class="mb-10">Learn from industry experts who have hands-on experience in design and development.</p>
-            <div class="flex justify-end"><img src="<?php echo get_template_directory_uri(); ?> ./img/button.png" alt=""></div>
-        </div>
-        <div class="bg-absolute-white p-10">
-            <h1 class="font-bold text-6xl text-end mb-10">03</h1>
-            <h3 class="text-xl mb-5 font-semibold">Diverse Course Offerings</h3>
-            <p class="mb-10">Explore a wide range of design and development courses covering various topics.</p>
-            <div class="flex justify-end"><img src="<?php echo get_template_directory_uri(); ?> ./img/button.png" alt=""></div>
-        </div>
-        <div class="bg-absolute-white p-10">
-            <h1 class="font-bold text-6xl text-end mb-10">04</h1>
-            <h3 class="text-xl mb-5 font-semibold">Updated Curriculum</h3>
-            <p class="mb-10">Access courses with up-to-date content reflecting the latest trends and industry practices.</p>
-            <div class="flex justify-end"><img src="<?php echo get_template_directory_uri(); ?> ./img/button.png" alt=""></div>
-        </div>
-        <div class="bg-absolute-white p-10">
-            <h1 class="font-bold text-6xl text-end mb-10">05</h1>
-            <h3 class="text-xl mb-5 font-semibold">Practical Projects and Assignments</h3>
-            <p class="mb-10">Develop a portfolio showcasing your skills and abilities to potential employers.</p>
-            <div class="flex justify-end"><img src="<?php echo get_template_directory_uri(); ?> ./img/button.png" alt=""></div>
-        </div>
-        <div class="bg-absolute-white p-10">
-            <h1 class="font-bold text-6xl text-end mb-10">06</h1>
-            <h3 class="text-xl mb-5 font-semibold">Interactive Learning Environment</h3>
-            <p class="mb-10">Collaborate with fellow learners, exchanging ideas and feedback to enhance your understanding.</p>
-            <div class="flex justify-end"><img src="<?php echo get_template_directory_uri(); ?> ./img/button.png" alt=""></div>
-        </div> -->
         <?php
-        $benefits = get_posts(array(
+        $advantages = get_posts(array(
             'numberposts' => 10,
-            'post_type'   => 'benefit'
+            'post_type'   => 'advantage'
         ));
 
-        foreach ($benefits as $benefit) { ?>
+        foreach ($advantages as $advantage) { ?>
             <div class="p-6 bg-absolute-white rounded-lg">
-                <h2 class="font-bold text-6xl text-end mb-10"><?php echo get_the_title($benefit); ?></h2>
-                <div class="text-xl mb-5 font-semibold"><?php echo $benefit->post_content; ?></div>
-                <p class="text-gray-600 mb-4"><?php echo get_the_excerpt($benefit); ?></p>
+                <h2 class="font-bold text-6xl text-end mb-10"><?php echo get_post_meta($advantage->ID, 'number', true)?></h2>
+                <div class="text-xl mb-5 font-semibold"><?php echo get_post_meta($advantage->ID, 'heading', true)?></div>
+                <p class="text-gray-600 mb-4"><?php echo get_post_meta($advantage->ID, 'description', true)?></p>
                 <div class="flex justify-end"><img src="<?php echo get_template_directory_uri(); ?> ./img/button.png" alt=""></div>
             </div>
         <?php } ?>
