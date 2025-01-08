@@ -1,4 +1,7 @@
-<?php get_header() ?>
+<?php get_header() 
+//Template Name:course
+?>
+
 <section class="container mx-auto px-4 py-12 lg:px-8">
     <div class="grid grid-cols-1 gap-5 lg:grid-cols-2 mb-16">
         <div>
@@ -15,59 +18,73 @@
 </section>
 
 <section class="container mx-auto px-6 py-8">
-    <div class="bg-absolute-white p-8 rounded-lg mb-12"> 
-        <div class="md:flex block justify-between">
-            <span class="w-3/4">
-                <h2 class="font-semibold text-2xl mb-2">Web Design Fundamentals</h2>
-                <p class="text-base">Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
-            </span>
-            <span class="flex items-center">
-                <button class="border border-white-95 mt-5 py-3 bg-white-99 px-5 rounded-lg">
-                    View Course
-                </button>
-            </span>
-        </div>
-        <div class="grid grid-cols-3 md:gap-6 gap-1 mt-8">
-            <img class="w-full" src="<?php echo get_template_directory_uri(); ?>./img/web-design_1.png" alt="">
-            <img class="w-full" src="<?php echo get_template_directory_uri(); ?>./img/web-design_2.png" alt="">
-            <img class="w-full" src="<?php echo get_template_directory_uri(); ?>./img/web-design_3.png" alt="">
-        </div>
-        <div class="flex flex-wrap items-center justify-between space-x-4 mt-4">
-            <div class="md:mb-0 mb-3">
-                <span class="text-gray-35 border border-white-95 px-3 p-2 rounded text-sm">4 Weeks</span>
-                <span class="text-gray-35 border border-white-95 px-3 p-2 rounded text-sm">Beginner</span>
-            </div>
-            <div class="m-0">
-                <span class="text-gray-15 font-medium pr-3 text-sm">By John Smith</span>
-            </div>
-        </div>
-        <div class=" mt-8 py-4 rounded-lg border border-white-95">
-            <h2 class="font-bold text-xl pb-3 mb-3 border-b border-white-95 px-8">Curriculum</h2>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:px-8 px-3">
-                <div class="md:border-r md:border-b-0 py-2 border-b border-white-95">
-                    <h3 class="text-3xl font-extrabold mb-1">01</h3>
-                    <p class="text-gray-600 text-sm">Introduction to HTML</p>
+<?php
+        $skills = get_posts(array(
+            'numberposts' => 10,
+            'post_type'   => 'skill-course',
+            'orderby' => 'menu_order',
+        ));
+
+        foreach ($skills as $skill) { ?>
+                <div class="bg-absolute-white p-8 rounded-lg mb-12"> 
+                    <div class="md:flex block justify-between">
+                        <span class="w-3/4">
+                            <h2 class="font-semibold text-2xl mb-2"><?php echo get_post_meta($skill->ID, 'course_name', true) ?></h2>
+                            <p class="text-base"><?php echo get_post_meta($skill->ID, 'course_description', true) ?></p>
+                        </span>
+                        <span class="flex items-center">
+                            <button class="border border-white-95 mt-5 py-3 bg-white-99 px-5 rounded-lg">
+                                View Course
+                            </button>
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-3 md:gap-6 gap-1 mt-8">
+    <img class="w-full" src="<?php echo wp_get_attachment_url(get_post_meta($skill->ID, 'course_image_1', true)); ?>" alt="">
+    <img class="w-full" src="<?php echo wp_get_attachment_url(get_post_meta($skill->ID, 'course_image_2', true)); ?>" alt="">
+    <img class="w-full" src="<?php echo wp_get_attachment_url(get_post_meta($skill->ID, 'course_image_3', true)); ?>" alt="">
+</div>
+                    <div class="flex flex-wrap items-center justify-between space-x-4 mt-4">
+                        <div class="md:mb-0 mb-3">
+                            <span class="text-gray-35 border border-white-95 px-3 p-2 rounded text-sm"><?php echo get_post_meta($skill->ID, 'course_duration', true) ?></span>
+                            <span class="text-gray-35 border border-white-95 px-3 p-2 rounded text-sm"><?php echo get_post_meta($skill->ID, 'course_level', true) ?></span>
+                        </div>
+                        <div class="m-0">
+                            <span class="text-gray-15 font-medium pr-3 text-sm"><?php echo get_post_meta($skill->ID, 'instructor_name', true) ?></span>
+                        </div>
+                    </div>
+                    <div class=" mt-8 py-4 rounded-lg border border-white-95">
+                        <h2 class="font-semibold text-xl pb-3 mb-3 border-b border-white-95 px-8">Curriculum    </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:px-8 px-3"> 
+                            <div class="md:border-r md:border-b-0 py-2 border-b border-white-95">
+                                <h3 class="text-3xl font-bold mb-1"><?php echo get_post_meta($skill->ID, 'module_order_1', true) ?></h3>
+                                <p class="text-gray-600 text-sm"><?php echo get_post_meta($skill->ID, 'module_topics_1', true) ?></p>
+                            </div>
+                            <div class="md:border-r md:border-b-0 py-2 border-b border-white-95">
+                            <h3 class="text-3xl font-bold mb-1"><?php echo get_post_meta($skill->ID, 'module_order_2', true) ?></h3>
+                            <p class="text-gray-600 text-sm"><?php echo get_post_meta($skill->ID, 'module_topics_2', true) ?></p>
+                            </div>
+                            <div class="md:border-r md:border-b-0 py-2 border-b border-white-95">
+                            <h3 class="text-3xl font-bold mb-1"><?php echo get_post_meta($skill->ID, 'module_order_3', true) ?></h3>
+                            <p class="text-gray-600 text-sm"><?php echo get_post_meta($skill->ID, 'module_topics_3', true) ?></p>
+                            </div>
+                            <div class="md:border-r md:border-b-0 py-2 border-b border-white-95">
+                            <h3 class="text-3xl font-bold mb-1"><?php echo get_post_meta($skill->ID, 'module_order_4', true) ?></h3>
+                            <p class="text-gray-600 text-sm"><?php echo get_post_meta($skill->ID, 'module_topics_4', true) ?></p>
+                            </div>
+                            <div>
+                            <h3 class="text-3xl font-bold mb-1"><?php echo get_post_meta($skill->ID, 'module_order_5', true) ?></h3>
+                            <p class="text-gray-600 text-sm"><?php echo get_post_meta($skill->ID, 'module_topics_5', true) ?></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="md:border-r md:border-b-0 py-2 border-b border-white-95">
-                    <h3 class="text-3xl font-extrabold mb-1">02</h3>
-                    <p class="text-gray-600 text-sm">Styling with CSS</p>
-                </div>
-                <div class="md:border-r md:border-b-0 py-2 border-b border-white-95">
-                    <h3 class="text-3xl font-extrabold mb-1">03</h3>
-                    <p class="text-gray-600 text-sm">Introduction to Responsive Design</p>
-                </div>
-                <div class="md:border-r md:border-b-0 py-2 border-b border-white-95">
-                    <h3 class="text-3xl font-extrabold mb-1">04</h3>
-                    <p class="text-gray-600 text-sm">Design Principles for Web</p>
-                </div>
-                <div>
-                    <h3 class="text-3xl font-extrabold mb-1">05</h3>
-                    <p class="text-gray-600 text-sm">Building a Basic Website</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="bg-absolute-white p-8 rounded-lg mb-12">
+        <?php } ?>
+
+
+
+
+
+    <!-- <div class="bg-absolute-white p-8 rounded-lg mb-12">
         <div class="md:flex block justify-between">
             <span class="w-3/4">
                 <h2 class="font-semibold text-2xl mb-2">UI/UX Design</h2>
@@ -274,6 +291,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </section>
 <?php get_footer() ?>
