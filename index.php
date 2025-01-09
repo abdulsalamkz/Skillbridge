@@ -58,9 +58,7 @@
                 <p class="text-base">Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
             </span>
             <span class="flex items-end">
-                <button class="border border-white-95 mt-5 py-3 bg-white-99 px-5 rounded-lg">
-                    Veiw All
-                </button>
+                <a  class="border border-white-95 mt-5 py-3 bg-white-99 px-5 rounded-lg" href="<?php echo get_post_type_archive_link( 'course' ); ?>">View All</a>
             </span>
         </div>
     </div>
@@ -68,7 +66,8 @@
         <?php
         $advantages = get_posts(array(
             'numberposts' => 10,
-            'post_type'   => 'advantage'
+            'post_type'   => 'advantage',
+            'orderby' => 'menu_order',
         ));
 
         foreach ($advantages as $advantage) { ?>
@@ -89,9 +88,7 @@
                 <p class="text-base">Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
             </span>
             <span class="flex items-end">
-                <button class="border border-white-95 mt-5 py-3 bg-white-99 px-5 rounded-lg">
-                    Veiw All
-                </button>
+                <a  class="border border-white-95 mt-5 py-3 bg-white-99 px-5 rounded-lg" href="<?php echo get_post_type_archive_link( 'course' ); ?>">View All</a>
             </span>
         </div>
     </div>
@@ -146,9 +143,7 @@
                 <p class="text-base">Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
             </span>
             <span class="flex items-end">
-                <button class="border border-white-95 mt-5 py-3 bg-white-99 px-5 rounded-lg">
-                    Veiw All
-                </button>
+                <a  class="border border-white-95 mt-5 py-3 bg-white-99 px-5 rounded-lg" href="<?php echo get_post_type_archive_link( 'course' ); ?>">View All</a>
             </span>
         </div>
     </div>
